@@ -1,0 +1,16 @@
+DO $$
+DECLARE
+	cont int:=0;
+	num int := 3;
+	
+BEGIN
+	LOOP
+		IF (cont > 10) THEN
+			exit;
+		END IF;
+		
+		raise notice '% = % = %', num, cont, (num=cont);
+		cont:= cont+3;
+	END LOOP;
+	
+END $$;
